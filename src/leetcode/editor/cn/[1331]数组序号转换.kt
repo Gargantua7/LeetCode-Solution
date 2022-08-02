@@ -49,9 +49,8 @@ package leetcode.editor.cn
  * @author Gargantua丶
  * 2022-07-28 09:40:14
  */
-class
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class ArrayRankTransform {
     fun arrayRankTransform(arr: IntArray): IntArray {
         val map = HashMap<Int, Int>()
         arr.sorted().forEach {
