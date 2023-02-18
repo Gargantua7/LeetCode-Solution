@@ -93,7 +93,7 @@ class Solution {
         val ans = ArrayList<List<Int>>()
         var x = 1
         var y = 1000
-        while (x in 1..100 && y in 1..1000) {
+        while (x in 1..1000 && y in 1..1000) {
             val temp = function.f(x, y)
             if (temp == z) {
                 ans.add(listOf(x, y))
