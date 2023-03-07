@@ -37,18 +37,29 @@ class LiWuDeZuiDaJieZhiLcof {
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     fun maxValue(grid: Array<IntArray>): Int {
-        val dp = Array(grid.size) { IntArray(grid[0].size) }
-        dp[0][0] = grid[0][0]
-        for (i in 1..grid.lastIndex) dp[i][0] = grid[i][0] + dp[i - 1][0]
-        for (j in 1..grid[0].lastIndex) dp[0][j] = grid[0][j] + dp[0][j - 1]
+        val dp = IntArray(grid[0].size)
+        dp[0] = grid[0][0]
+        for (i in 1..grid[0].lastIndex) dp[i] = dp[i - 1] + grid[0][i]
         for (i in 1..grid.lastIndex) {
+            dp[0] += grid[i][0]
             for (j in 1..grid[0].lastIndex) {
-                dp[i][j] = kotlin.math.max(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
+                dp[j] = maxOf(dp[j], dp[j - 1]) + grid[i][j]
             }
         }
-        return dp.last().last()
+        return dp.last()
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
-
+fun maxValue(grid: Array<IntArray>): Int {
+    val dp = Array(grid.size) { IntArray(grid[0].size) }
+    dp[0][0] = grid[0][0]
+    for (i in 1..grid.lastIndex) dp[i][0] = grid[i][0] + dp[i - 1][0]
+    for (j in 1..grid[0].lastIndex) dp[0][j] = grid[0][j] + dp[0][j - 1]
+    for (i in 1..grid.lastIndex) {
+        for (j in 1..grid[0].lastIndex) {
+            dp[i][j] = kotlin.math.max(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
+        }
+    }
+    return dp.last().last()
+}
 }
