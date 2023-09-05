@@ -11,11 +11,3 @@ class TreeNode(var `val`: Int) {
     var left: TreeNode? = null
     var right: TreeNode? = null
 }
-
-fun Collection<Number>.max(): Int? = 0
-
-fun Array<Number>.max(): Int? = 0
-
-fun Collection<Number>.min(): Int? = 0
-
-fun Array<Number>.min(): Int? = 0
