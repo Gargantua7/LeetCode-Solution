@@ -56,7 +56,3 @@ class Solution {
 }
 //leetcode submit region end(Prohibit modification and deletion)
 }
-
-fun IntArray.min(): Int? {
-    return minOrNull()
-}
