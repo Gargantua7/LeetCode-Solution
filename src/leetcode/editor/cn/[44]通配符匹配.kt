@@ -58,8 +58,6 @@
 
 package leetcode.editor.cn
 
-import jdk.internal.org.jline.utils.Colors
-
 
 /**
  * 44
