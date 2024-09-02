@@ -109,7 +109,7 @@ class Solution {
                 waiting.remove(take)
                 running.offer(take to task + load[i])
                 counts[take]++
-            }1
+            }
         }
         // WARNING: Since in Kotlin 1.4; ERROR: Since in Kotlin 1.6
         val max = counts.maxOrNull()

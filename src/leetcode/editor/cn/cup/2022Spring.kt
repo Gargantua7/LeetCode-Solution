@@ -1,7 +1,8 @@
 package leetcode.editor.cn.cup
 
 import leetcode.editor.cn.TreeNode
-import leetcode.editor.cn.min
+import java.util.LinkedList
+import java.util.TreeSet
 
 /**
  * @author Gargantua7
@@ -96,20 +97,22 @@ class Solution {
                 }
             }
         }
+
+        return 0
     }
 
-    fun defendSpaceCity(time: IntArray, position: IntArray): Int {
-        val dp = Array(500) { IntArray(500) }
-        val window = HashMap<Int, TreeSet<Int>>()
-        val t = HashMap<Int, TreeSet<Int>>()
-        for (i in dp.indices) {
-            for (j in dp[i].indices) {
-                dp[i][j] = if (j == 0) 0 else dp[i][j - 1]
-                if (i)
-            }
-        }
-
-    }
+//    fun defendSpaceCity(time: IntArray, position: IntArray): Int {
+//        val dp = Array(500) { IntArray(500) }
+//        val window = HashMap<Int, TreeSet<Int>>()
+//        val t = HashMap<Int, TreeSet<Int>>()
+//        for (i in dp.indices) {
+//            for (j in dp[i].indices) {
+//                dp[i][j] = if (j == 0) 0 else dp[i][j - 1]
+//                if (i)
+//            }
+//        }
+//
+//    }
 
     fun getMinimumTime(time: IntArray, fruits: Array<IntArray>, limit: Int): Int {
         return fruits.fold(0) { acc, (type, n) ->

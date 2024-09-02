@@ -55,7 +55,7 @@ class Solution {
         var q = p
         p.next = head?: return null
         while (q.next != null && q.next!!.next != null) {
-            if (q.next!!.`val` == q.next!!.next.`val`) {
+            if (q.next!!.`val` == q.next!!.next!!.`val`) {
                 val x: Int = q.next!!.`val`
                 while (q.next != null && q.next!!.`val` == x) {
                     q.next = q.next!!.next

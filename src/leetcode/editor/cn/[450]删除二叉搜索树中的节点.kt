@@ -45,9 +45,6 @@
 
 package leetcode.editor.cn
 
-import sun.reflect.generics.tree.Tree
-import java.util.*
-
 /**
  * 450
  * 删除二叉搜索树中的节点

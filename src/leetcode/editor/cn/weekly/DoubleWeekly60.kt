@@ -129,6 +129,8 @@ class DoubleWeekly60 {
                 sum++
             }
         }
+
+        return -1
     }
 
     fun isPrime(num: Int): Boolean {
