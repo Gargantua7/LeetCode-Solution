@@ -54,6 +54,9 @@
 
 
 package leetcode.editor.cn
+
+import java.util.*
+
 /**
  * 35
  * 搜索插入位置
@@ -64,7 +67,7 @@ package leetcode.editor.cn
 class SearchInsertPosition { 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    fun searchInsert(nums: IntArray, target: Int): Int {
+    fun searchInsert1(nums: IntArray, target: Int): Int {
         var left = 0
         var right = nums.lastIndex
         while (left <= right) {
@@ -74,6 +77,12 @@ class Solution {
             else right = mid - 1
         }
         return left
+    }
+
+    fun searchInsert(nums: IntArray, target: Int): Int {
+        val map = TreeMap<Int, Int>()
+        nums.forEachIndexed { i, it -> map[it] = i }
+        return map.ceilingEntry(target)?.value ?: nums.lastIndex
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
