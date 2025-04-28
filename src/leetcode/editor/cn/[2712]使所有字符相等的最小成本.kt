@@ -45,8 +45,6 @@
 
 package leetcode.editor.cn
 
-import sun.jvm.hotspot.HelloWorld.e
-
 /**
  * 2712
  * 使所有字符相等的最小成本
