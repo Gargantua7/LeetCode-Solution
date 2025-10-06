@@ -58,7 +58,7 @@ class LicenseKeyFormatting {
                 var group = true
                 for (i in s.indices) {
                     if (s[i] != '-') {
-                        append(s[i].toUpperCase())
+                        append(s[i].uppercaseChar())
                         curr++
                         if ((group && first > 0 && curr == first) || curr == k) {
                             curr = 0

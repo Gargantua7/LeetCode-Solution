@@ -62,7 +62,7 @@ class KeyboardRow {
             words.forEach { word ->
                 var flag = true
                 for (i in 1..word.lastIndex) {
-                    if (dic[word[i].toLowerCase() - 'a'] != dic[word[i - 1].toLowerCase() - 'a']) {
+                    if (dic[word[i].lowercaseChar() - 'a'] != dic[word[i - 1].lowercaseChar() - 'a']) {
                         flag = false
                         break
                     }

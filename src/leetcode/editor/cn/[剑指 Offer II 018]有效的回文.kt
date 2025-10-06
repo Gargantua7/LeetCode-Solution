@@ -55,8 +55,8 @@ class Solution {
                 !s[left].isLetterOrDigit() -> left++
                 !s[right].isLetterOrDigit() -> right--
                 else -> {
-                    val l = if (s[left].isUpperCase()) s[left].toLowerCase() else s[left]
-                    val r = if (s[right].isUpperCase()) s[right].toLowerCase() else s[right]
+                    val l = if (s[left].isUpperCase()) s[left].lowercaseChar() else s[left]
+                    val r = if (s[right].isUpperCase()) s[right].lowercaseChar() else s[right]
                     if (l != r) return false
                     left++
                     right--

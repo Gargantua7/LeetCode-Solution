@@ -35,6 +35,9 @@
 
 package leetcode.editor.cn
 
+import java.util.Locale
+import java.util.Locale.getDefault
+
 /**
  * 709
  * 转换成小写字母
@@ -45,9 +48,7 @@ package leetcode.editor.cn
 class ToLowerCase {
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    fun toLowerCase(s: String): String {
-        return s.toLowerCase()
-    }
+    val toLowerCase: (String) -> String = String::lowercase
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

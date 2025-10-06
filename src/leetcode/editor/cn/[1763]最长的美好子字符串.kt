@@ -66,7 +66,7 @@ class Solution {
         maxLen = 0
         var types = 0
         for (element in s) {
-            types = types or (1 shl element.toLowerCase() - 'a')
+            types = types or (1 shl element.lowercaseChar() - 'a')
         }
         types = Integer.bitCount(types)
         for (i in 1..types) {
@@ -83,7 +83,7 @@ class Solution {
         var r = 0
         var total = 0
         while (r < s.length) {
-            var idx = s[r].toLowerCase() - 'a'
+            var idx = s[r].lowercaseChar() - 'a'
             if (Character.isLowerCase(s[r])) {
                 ++lowerCnt[idx]
                 if (lowerCnt[idx] == 1 && upperCnt[idx] > 0) {
@@ -97,7 +97,7 @@ class Solution {
             }
             total += if (lowerCnt[idx] + upperCnt[idx] == 1) 1 else 0
             while (total > typeNum) {
-                idx = s[l].toLowerCase() - 'a'
+                idx = s[l].lowercaseChar() - 'a'
                 total -= if (lowerCnt[idx] + upperCnt[idx] == 1) 1 else 0
                 if (Character.isLowerCase(s[l])) {
                     --lowerCnt[idx]
