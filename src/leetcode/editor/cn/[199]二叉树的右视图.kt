@@ -62,29 +62,40 @@ class BinaryTreeRightSideView {
      */
     class Solution {
 
-        val Deque<*>.lastIndex get() = this.size - 1
 
         fun rightSideView(root: TreeNode?): List<Int> {
-            val ans = ArrayList<Int>()
-            val stack: Deque<TreeNode> = LinkedList()
-            stack.push(root ?: return emptyList())
-            while (stack.isNotEmpty()) {
-                val node = stack.peek()
-                if (ans.size == stack.lastIndex) ans.add(node.`val`)
-                node.right?.let { stack.push(it) } ?: run {
-                    var lastNode: TreeNode? = null
-                    while (stack.isNotEmpty()) {
-                        val node1 = stack.peek()
-                        if (node1.left != null && node1.left != lastNode) {
-                            stack.push(node1.left)
-                            break
-                        } else {
-                            lastNode = stack.pop()
-                        }
-                    }
+            if (root == null) return emptyList()
+
+            val res = ArrayList<Int>()
+            var queue = ArrayDeque<TreeNode>()
+            var next = ArrayDeque<TreeNode>()
+
+            queue.addLast(root)
+            res.add(root.`val`)
+
+            var value = root.`val`
+
+            while (queue.isNotEmpty()) {
+                val node = queue.removeFirst()
+                node.left?.let {
+                    next.addLast(it)
+                    value = it.`val`
+                }
+                node.right?.let {
+                    next.addLast(it)
+                    value = it.`val`
+                }
+
+                if (queue.isEmpty() && next.isNotEmpty()) {
+                    res.add(value)
+
+                    queue = next
+                    next = ArrayDeque<TreeNode>()
                 }
             }
-            return ans
+
+            return res
+
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
