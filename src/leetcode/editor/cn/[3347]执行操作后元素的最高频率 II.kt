@@ -52,23 +52,23 @@
 //
 // 
 // 1 <= nums.length <= 10⁵ 
-// 1 <= nums[i] <= 10⁵ 
-// 0 <= k <= 10⁵ 
+// 1 <= nums[i] <= 10⁹ 
+// 0 <= k <= 10⁹ 
 // 0 <= numOperations <= nums.length 
 // 
 //
-// Related Topics 数组 二分查找 前缀和 排序 滑动窗口 👍 29 👎 0
+// Related Topics 数组 二分查找 前缀和 排序 滑动窗口 👍 25 👎 0
 
 
 package leetcode.editor.cn
 
-/*** 3346
-* 执行操作后元素的最高频率 I
+/*** 3347
+* 执行操作后元素的最高频率 II
 *
 * @author Gargantua7
-* 2025-10-21 20:48:16
+* 2025-10-22 22:43:43
 */
-class MaximumFrequencyOfAnElementAfterPerformingOperationsI {
+class MaximumFrequencyOfAnElementAfterPerformingOperationsIi {
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     fun maxFrequency(nums: IntArray, k: Int, numOperations: Int): Int {
