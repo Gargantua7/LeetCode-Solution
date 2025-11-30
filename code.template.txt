@@ -1,0 +1,15 @@
+[$!{question.frontendQuestionId}]${question.title}
+
+${question.content}
+
+package leetcode.editor.cn
+
+/*** ${question.frontendQuestionId}
+* ${question.title}
+*
+* @author Gargantua7
+* $!velocityTool.date()
+*/
+class $!velocityTool.camelCaseName(${question.titleSlug}) {
+${question.code}
+}
